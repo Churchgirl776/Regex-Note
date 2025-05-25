@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Example</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      max-width: 800px;
+      margin: 2rem auto;
+      font-family: sans-serif;
+    }
+
+    .grid div {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .heading {
+      grid-column: span 2;
+      background: #f0f0f0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .label {
+      background: #f9f9f9;
+      font-weight: bold;
+    }
+
+    .example {
+      background: #fff;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 2rem auto;
+      font-family: sans-serif;
+      line-height: 1.6;
+    }
+
+    section h2 {
+      background: #f0f0f0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    section p {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
+    #userForm {
+      max-width: 800px;
+      margin: 2rem auto;
+      font-family: sans-serif;
+    }
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hello! I`m Faith</h1>
+
+<section>
+    <h2>QUESTION 1: How innerHTML, textContent, and innerText Work</h2>
+    <p><strong>innerHTML</strong>: Gets or sets the HTML content inside an element. It includes tags and can be used to insert HTML structure, not just text.</p>
+    <p><strong>textContent</strong>: Gets or sets only the text content of an element and all its children. It does not include any HTML tags and includes hidden text.</p>
+    <p><strong>innerText</strong>: Similar to textContent, but it respects the rendered appearance — it excludes hidden text (like elements styled with <code>display: none</code>).</p>
+  </section>
+
+  <div class="grid">
+    <div class="heading">Difference between <code>innerHTML</code>, <code>textContent</code>, and <code>innerText</code></div>
+
+    <div class="label">Property</div>
+    <div class="label">Output Example (from <code>&lt;div&gt;Hello &lt;b&gt;World&lt;/b&gt;&lt;/div&gt;</code>)</div>
+
+    <div><code>innerHTML</code></div>
+    <div class="example">Hello <b>World</b></div>
+
+    <div><code>textContent</code></div>
+    <div class="example">Hello World</div>
+
+    <div><code>innerText</code></div>
+    <div class="example">Hello World</div>
+  </div>
+
+  <section>
+    <h2>QUESTION 2: Why Event Handlers Don't Always Need Named Functions</h2>
+    <p>When handling events, we often use <strong>anonymous functions</strong> — functions without names — because they're usually short and used only once. This avoids cluttering the global scope with unnecessary function names.</p>
+    <p>Example: <code>element.addEventListener('click', function() { alert('Clicked!'); });</code></p>
+    <p>However, using <strong>named functions</strong> can improve readability and make it easier to remove listeners later with <code>removeEventListener</code>.</p>
+  </section>
+
+<section>
+  <h2>QUESTION 3: User-Profile</h2>
+  
+  <form id="userForm">
+    <input type="text" placeholder="First Name"><br>
+    <input type="text" placeholder="Last Name"><br>
+    <input type="email" placeholder="Email" ><br>
+    <input type="tel" placeholder="Phone" ><br>
+    <input type="password" placeholder="Password"><br>
+    <input type="confirm" placeholder="confirm Password"><br>
+    <button type="submit" id="clickMe">Click Me</button>
+  </form>
+  <div id="output"></div>
+</section>
+
+  <script>
+    let firstNameInput = document.querySelector("input[placeholder='First Name']");
+    let lastNameInput = document.querySelector("input[placeholder='Last Name']");
+    let emailInput = document.querySelector("input[placeholder='Email']");
+    let phoneInput = document.querySelector("input[placeholder='Phone']");
+    let passwordInput = document.querySelector("input[placeholder='Password']");
+    let output = document.getElementById("output");
+
+
+    // document.getElementById("clickMe").addEventListener("click", () => {
+    //   output.innerHTML =
+    //     "<p><strong>First Name:</strong> " + firstNameInput.value + "</p>" +
+    //     "<p><strong>Last Name:</strong> " + lastNameInput.value + "</p>" +
+    //     "<p><strong>Email:</strong> " + emailInput.value + "</p>" +
+    //     "<p><strong>Phone:</strong> " + phoneInput.value + "</p>"
+    //     "<p><strong>Password:</strong> " + passwordInput.value + "</p>";
+    // });
+   
+
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
+
